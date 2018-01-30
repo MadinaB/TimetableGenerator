@@ -75,9 +75,42 @@ public class DrawTimetable {
 	     graphics.drawString("Saturday", x2+toRight-6, (y3+dayOfWeekFontsize));
 	     graphics.drawString("Sunday", x1+toRight+11, (y4+dayOfWeekFontsize));
 
-	     int block1planx = x1+screenPaddingSize, block1plany= y1+dayOfWeekFontsize+dayOfWeekSpacesize+planFontsize;
-	     int block1timex= x2-timeSize, block1timey= block1plany;
+	   //int x0 =0, x1 = 75, x2 = 375, x3 = 675, x4 = 750;
+	  //  int y0 = 0, y1 = 50, y2 = 325, y3 = 600, y4 = 875, y5 = 1150, y6 = 1200;
+
+	     int block1planx = x1+screenPaddingSize, block1plany=y1+dayOfWeekFontsize+dayOfWeekSpacesize+planFontsize;
+	     int block1timex= x2, block1timey= block1plany;
 	     int block1bordery= y2;
+
+	     int block2planx = x2+screenPaddingSize, block2plany=y1+dayOfWeekFontsize+dayOfWeekSpacesize+planFontsize;
+	     int block2timex= x3, block2timey= block2plany;
+	     int block2bordery= y2;
+
+	     int block3planx = x1+screenPaddingSize, block3plany=y2+dayOfWeekFontsize+dayOfWeekSpacesize+planFontsize;
+	     int block3timex= x2, block3timey= block3plany;
+	     int block3bordery= y3;
+
+	     int block4planx = x2+screenPaddingSize, block4plany=y2+dayOfWeekFontsize+dayOfWeekSpacesize+planFontsize;
+	     int block4timex= x3, block4timey= block4plany;
+	     int block4bordery= y3;
+
+	     int block5planx = x1+screenPaddingSize, block5plany=y3+dayOfWeekFontsize+dayOfWeekSpacesize+planFontsize;
+	     int block5timex= x2, block5timey= block5plany;
+	     int block5bordery= y4;
+
+	     int block6planx = x2+screenPaddingSize, block6plany=y3+dayOfWeekFontsize+dayOfWeekSpacesize+planFontsize;
+	     int block6timex= x3, block6timey= block6plany;
+	     int block6bordery= y4;
+
+	     int block7planx = x1+screenPaddingSize, block7plany=y4+dayOfWeekFontsize+dayOfWeekSpacesize+planFontsize;
+	     int block7timex= x2, block7timey= block7plany;
+	     int block7bordery= y5;
+
+	     int[] blockplanx = {block1planx, block2planx, block3planx, block4planx, block5planx, block6planx, block7planx};
+	     int[] blockplany = {block1plany, block2plany, block3plany, block4plany, block5plany, block6plany, block7plany};
+	     int[] blocktimex = {block1timex, block2timex, block3timex, block4timex, block5timex, block6timex, block7timex,};
+	     int[] blockborders= {block1bordery, block2bordery,block3bordery,block4bordery,block5bordery,block6bordery,block7bordery};
+
 
 	     /* Write dynamic data to image */
 	     Timetable timetable = new Timetable();
@@ -87,18 +120,20 @@ public class DrawTimetable {
 	     graphics.setColor(Color.BLACK);
 	     for(int i = 0; i< input.size(); i++){
 	    	 Pair<Integer, Pair<Integer,Pair<String , String>>> plan= input.get(i);
-	    	 int blockborder = -1, planx = -1, plany = -1, timex = -1, timey = -1;
-	    	 if(plan.getKey()==1){
-	    		 planx = block1planx;
-	    		 plany = block1plany;
-	    		 timex = block1timex;
-	    		 timey = block1timey;
-	    		 blockborder = block1bordery;
-	    	 }
-	    	 if((plany<blockborder&&timey<blockborder)){
-	    		 graphics.drawString(plan.getValue().getValue().getKey(), planx, plany);
-	    		 graphics.drawString(plan.getValue().getValue().getValue(), timex, timey);
-	    		 block1plany+=(planFontsize+planSpacesize); block1timey+=(planFontsize+planSpacesize);
+	    	 String planRecord = plan.getValue().getValue().getKey();
+	    	 String timeRecord = plan.getValue().getValue().getValue();
+	    	 int index = plan.getKey()-1;
+	    	 int planx = blockplanx[index];
+	    	 int plany = blockplany[index];
+	    	 int timex = blocktimex[index] - (timeRecord.length()*10);
+	    	 int timey = blockplany[index];
+	    	 int blockborder = blockborders[index];
+	    	 if((plany<blockborder&&timey<blockborder)&&(index>=0&&index<7)){
+	    		 graphics.setColor(Color.BLACK);
+	    		 graphics.drawString(planRecord, planx, plany);
+	    		 graphics.setColor(Color.GRAY);
+	    		 graphics.drawString(timeRecord, timex, timey);
+	    		 blockplany[index]+=(planFontsize+planSpacesize);
 	    	 }
 	     }
 	     /* write image to file */

@@ -59,11 +59,24 @@ public class Timetable {
                         time = matcher.group();
                         day = timeRecord.substring(0, timeRecord.length() - time.length());
                     }														//extract time and day from timeRecord
+                    else{
+                    	pattern = Pattern.compile("([01]?[0-9]|2[0-3]):[0-5][0-9]");
+                        matcher = pattern.matcher(record);
+                        if (matcher.find()) {
+                            time = matcher.group();
+                            day = timeRecord.substring(0, timeRecord.length() - time.length());
+                        }
+                    }
                 }
+
+
 
                 if(time.length()>0&& day.length()>0){
                 	int minutes = getMinutes(time);
                 	int dayOfWeek = getDayIndex(day);
+                	if(plan.length()>14){
+                		plan = plan.substring(0, 12)+"...";
+                	}
                 	if(dayOfWeek!=0){
                 		answer.add(new Pair(dayOfWeek,new Pair(minutes,new Pair(plan, time))));
                 	}
@@ -144,7 +157,7 @@ public class Timetable {
 		String delims = "[ :-]+";
         String[] tokens = str.split(delims);
         int startTime = getMinutes(Integer.parseInt(tokens[0]),Integer.parseInt(tokens[1]));
-        int endTime = getMinutes(Integer.parseInt(tokens[2]),Integer.parseInt(tokens[3]));
+        //int endTime = getMinutes(Integer.parseInt(tokens[2]),Integer.parseInt(tokens[3]));
         return startTime;
 	}
 
