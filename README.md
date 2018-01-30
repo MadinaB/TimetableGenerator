@@ -6,6 +6,7 @@ Personalize your mobile device by setting your everyday plans to your phone back
 Input:
 
 Gym: Tuesday 23:30 
+
 Gym: Thursday 23:30
 
 Math: Monday 10:30
