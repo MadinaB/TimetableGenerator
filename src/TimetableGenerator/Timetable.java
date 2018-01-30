@@ -74,8 +74,8 @@ public class Timetable {
                 if(time.length()>0&& day.length()>0){
                 	int minutes = getMinutes(time);
                 	int dayOfWeek = getDayIndex(day);
-                	if(plan.length()>14){
-                		plan = plan.substring(0, 12)+"...";
+                	if(plan.length()>16){
+                		plan = plan.substring(0, 14)+"...";
                 	}
                 	if(dayOfWeek!=0){
                 		answer.add(new Pair(dayOfWeek,new Pair(minutes,new Pair(plan, time))));

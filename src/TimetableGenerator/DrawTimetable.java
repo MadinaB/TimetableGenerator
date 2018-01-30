@@ -115,7 +115,7 @@ public class DrawTimetable {
 	     /* Write dynamic data to image */
 	     Timetable timetable = new Timetable();
 	     ArrayList< Pair<Integer, Pair<Integer,Pair<String , String>>>> input = timetable.prepareData(data);
-	     font = new Font("Arial", Font.PLAIN, planFontsize);
+	     font = new Font("Georgia", Font.PLAIN, planFontsize); //"Serif" is good with plain | "Georgia" is best | "Arial" ok
 	     graphics.setFont(font);
 	     graphics.setColor(Color.BLACK);
 	     for(int i = 0; i< input.size(); i++){
@@ -123,9 +123,9 @@ public class DrawTimetable {
 	    	 String planRecord = plan.getValue().getValue().getKey();
 	    	 String timeRecord = plan.getValue().getValue().getValue();
 	    	 int index = plan.getKey()-1;
-	    	 int planx = blockplanx[index];
+	    	 int planx = blockplanx[index]+5;
 	    	 int plany = blockplany[index];
-	    	 int timex = blocktimex[index] - (timeRecord.length()*10);
+	    	 int timex = blocktimex[index] - (timeRecord.length()*10)-5;
 	    	 int timey = blockplany[index];
 	    	 int blockborder = blockborders[index];
 	    	 if((plany<blockborder&&timey<blockborder)&&(index>=0&&index<7)){
