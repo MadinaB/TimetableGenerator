@@ -64,4 +64,17 @@ public class CheckTimetableInputParses {
 		String output = t.DoWork(data);
 		assertEquals(output,answer);
 	}
+
+	@Test
+	public void test8() {
+		String data = "Math: Saturday 3:30-12:30 \nLiterature: Monday 22:30-12:30 \n";
+		data += "English: Sunday 20:30-12:30 \nHistory: Tuesday 10:30-12:30 \n";
+		data += "Kazakh: Sunday 22:30-12:30 \nRussian: Tuesday 12:30-12:30 \n";
+		data += "Physics: Sunday 00:30-12:30 \nChemistry: Tuesday 12:30-12:30 \n";
+		String answer ="1, 1350: Literature 22:30-12:30\n2, 630: History 10:30-12:30\n2, 750: Russian 12:30-12:30\n";
+				answer+="2, 750: Chemistry 12:30-12:30\n6, 210: Math 3:30-12:30\n7, 30: Physics 00:30-12:30\n";
+				answer+="7, 1230: English 20:30-12:30\n7, 1350: Kazakh 22:30-12:30\n";
+		String output = t.DoWork(data);
+		assertEquals(output,answer);
+	}
 }

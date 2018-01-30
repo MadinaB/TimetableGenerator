@@ -1,5 +1,7 @@
 package TimetableGenerator;
 import java.util.ArrayList;
+import java.util.Collections;
+
 import javafx.util.Pair;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -70,6 +72,8 @@ public class Timetable {
 
         	}
         }
+        Collections.sort(answer, new ByTimeComparator());
+        Collections.sort(answer, new ByDaysComparator());
 		return  answer;
 	}
 
@@ -149,3 +153,5 @@ public class Timetable {
 	}
 
 }
+
+
