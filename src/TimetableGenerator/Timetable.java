@@ -10,7 +10,7 @@ public class Timetable {
 
 	//private String data = "Math: Monday 10:30-12:30 \n Literature: Monday 10:30-12:30 \n";
 
-
+	// TODO control sizes of input time and plan strings
 	public String DoWork(String data){
 		return printData(prepareData(data));
 	}
@@ -30,7 +30,7 @@ public class Timetable {
 		return record.toString();
 	}
 
-	private ArrayList< Pair<Integer, Pair<Integer,Pair<String , String>>>> prepareData(String input){
+	public ArrayList< Pair<Integer, Pair<Integer,Pair<String , String>>>> prepareData(String input){
 
 		ArrayList<Pair<Integer, Pair<Integer,Pair<String , String>>>> answer = new ArrayList<>();// <day,< starttime, <str plan, str time> >
 
