@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class CheckDrawTimetable {
 	DrawTimetable t = new DrawTimetable();
-
+/*
 	@Test
 	public void test1() {
 		String path = "out.png";
@@ -71,6 +71,131 @@ public class CheckDrawTimetable {
 		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
 		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
 		data+= "Modern Economics: Friday 10:00 \n";
+		boolean output = t.createTimetableForPhone(data,path);
+		assertEquals(output,true);
+	}*/
+/*
+	@Test
+	public void test3() {
+		String path = "TimetableGenerator/out3.png";
+		String data = "Math: Monday 10:30 \nMath: Wednesday 10:30 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		boolean output = t.createTimetableForPhone(data,path);
+		assertEquals(output,true);
+	}*/
+	@Test
+	public void test4() {
+		String path = "TimetableGenerator/out4.png";
+		String data = "Math: Monday 10:30 \nMath: Wednesday 10:30 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
+		data+= "Russian: Tuesday 22:30 \nRussian: Thursday 20:30 \n";
+		data+= "History: Tuesday 12:30 \nHistory: Thursday 12:30 \n";
+		data+= "Geometry: Tuesday 14:30 \nGeometry: Thursday 14:30 \n";
+		data+= "Gym: Tuesday 23:30 \nGym: Thursday 23:30 \n";
+		data+= "Gym: Sunday 23:30 \nArt: Friday 11:30 \n";
+		data+= "Understanding Political Science: Monday 15:00 \nHistory of Civilization: Thursday 15:00 \n";
+		data+= "Modern Economics: Friday 10:00 \n";
+		data+= "English: Monday 12:30 \nEnglish: Wednesday 12:30 \n";
+		data+= "Literature: Monday 14:30 \nLiterature: Wednesday 14:30 \n";
 		boolean output = t.createTimetableForPhone(data,path);
 		assertEquals(output,true);
 	}

@@ -36,6 +36,9 @@ public class Timetable {
 
 		String delim1 = "[\n]";												// extract lines
         String[] lines = input.split(delim1);
+        if(lines.length>70){
+        	return  answer;
+        }
 
         for(int l = 0; l<lines.length; l++){								// if there are lines
         	String delim2 = "[:]";
